@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Event Management Report v2 — HoA DRIVE Handover Ceremonies</title>
+<style>
+  @page { size: 297mm 210mm; margin: 0; }
+  :root{--g:#55891a;--gd:#25400b;--gl:#eef5e4;--o:#fd6902;--ol:#fff1e6;--ink:#1b2610;--mu:#5d6b50;--ln:#dfe6d5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:"Inter","DejaVu Sans",Arial,sans-serif;color:var(--ink);font-size:10pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pg{width:297mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;display:flex;background:#fff}
+  .pg:last-child{page-break-after:auto}
+  /* sidebar */
+  .side{width:62mm;background:var(--gd);color:#fff;padding:14mm 9mm;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .side .logo{background:#fff;border-radius:3mm;padding:3mm 4mm;margin-bottom:10mm}
+  .side .logo img{width:100%;display:block}
+  .side nav{display:flex;flex-direction:column;gap:3.2mm;font-size:9pt}
+  .side nav div{display:flex;gap:3mm;align-items:center;opacity:.55;letter-spacing:.02em}
+  .side nav div i{font-style:normal;font-size:8pt;font-weight:800;color:#ffb98a;width:5mm}
+  .side nav div.on{opacity:1;font-weight:700}
+  .side nav div.on i{background:var(--o);color:#fff;border-radius:50%;width:6mm;height:6mm;display:flex;align-items:center;justify-content:center}
+  .side .foot{margin-top:auto;font-size:7.5pt;opacity:.7;line-height:1.4}
+  .side .wm{position:absolute;left:-14mm;bottom:-10mm;width:78mm;opacity:.07;filter:brightness(0) invert(1)}
+  .main{flex:1;padding:14mm 16mm 14mm 14mm;position:relative}
+  .main .pn{position:absolute;right:16mm;bottom:8mm;font-size:8pt;color:var(--mu)}
+  .main .bar{position:absolute;left:0;right:0;top:0;height:3mm;background:linear-gradient(90deg,var(--g),var(--o))}
+  .kick{font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--o);font-weight:700}
+  h1{font-size:23pt;line-height:1.12;color:var(--gd);font-weight:800;letter-spacing:-.01em;margin:1.5mm 0 3mm}
+  .sub{font-size:11pt;color:var(--mu);max-width:175mm;margin-bottom:6mm}
+  p{margin-bottom:3mm}
+  .big{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin:8mm 0}
+  .big div{border-radius:3mm;padding:6mm 6mm;background:var(--gl);border-left:2mm solid var(--g)}
+  .big div:nth-child(2){background:var(--ol);border-color:var(--o)}
+  .big b{display:block;font-size:34pt;line-height:1;color:var(--gd);font-weight:800}
+  .big div:nth-child(2) b{color:#b44a00}
+  .big span{font-size:8.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+  /* cover */
+  .cover{background:var(--gd);color:#fff}
+  .cover .l{width:150mm;padding:16mm 14mm 14mm 18mm;display:flex;flex-direction:column;position:relative}
+  .cover .l .logo{background:#fff;border-radius:3mm;padding:3.5mm 5mm;width:78mm}
+  .cover .l .logo img{width:100%;display:block}
+  .cover .k{margin-top:22mm;font-size:9pt;letter-spacing:.3em;text-transform:uppercase;color:#ffb98a;font-weight:700}
+  .cover h1{color:#fff;font-size:34pt;line-height:1.08;margin:4mm 0 5mm}
+  .cover .tag{font-size:14pt;color:#ffb98a;font-weight:600}
+  .cover .by{margin-top:auto;font-size:9pt;opacity:.85;line-height:1.5}
+  .cover .r{flex:1;background:linear-gradient(160deg,var(--g),#7cae2c);padding:16mm 14mm;display:flex;flex-direction:column;justify-content:center;gap:7mm;position:relative;overflow:hidden}
+  .cover .r .mk{position:absolute;right:-22mm;bottom:-18mm;width:110mm;opacity:.13;filter:brightness(0) invert(1)}
+  .cover .s b{display:block;font-size:44pt;line-height:1;font-weight:800}
+  .cover .s span{font-size:9pt;letter-spacing:.16em;text-transform:uppercase;opacity:.92}
+  .cover .meta{border-top:1px solid rgba(255,255,255,.4);padding-top:5mm;font-size:9.5pt;line-height:1.6}
+  .cover .meta em{font-style:normal;color:#ffe2cc;font-weight:700}
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:12mm 0 2mm;position:relative}
+  .tl::before{content:"";position:absolute;left:3mm;right:3mm;top:3.4mm;height:1mm;background:linear-gradient(90deg,var(--g),var(--o));border-radius:1mm}
+  .tl .m{position:relative;padding-top:9mm;padding-right:4mm}
+  .tl .m::before{content:"";position:absolute;left:0;top:0;width:8mm;height:8mm;border-radius:50%;background:#fff;border:1.2mm solid var(--g)}
+  .tl .m:nth-child(even)::before{border-color:var(--o)}
+  .tl .d{font-weight:800;color:var(--gd);font-size:12pt}
+  .tl .rg{font-weight:700;color:var(--o);font-size:9pt;text-transform:uppercase;letter-spacing:.1em}
+  .tl .x{font-size:9pt;color:var(--mu);margin-top:1mm}
+  /* services */
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:6mm}
+  .svc .c{border:1px solid var(--ln);border-top:2.2mm solid var(--g);border-radius:3mm;padding:7mm;min-height:105mm}
+  .svc .c:nth-child(2){border-top-color:var(--o)}
+  .svc .n{font-size:30pt;font-weight:800;color:var(--ln);line-height:1}
+  .svc h3{font-size:14pt;color:var(--gd);margin:2mm 0 2mm}
+  .svc p{font-size:10pt;color:#34432a}
+  .svc .st{font-size:8.5pt;color:var(--mu);margin-top:3mm;padding-top:3mm;border-top:1px dashed var(--ln)}
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;margin-top:8mm}
+  .dc{border:1px solid var(--ln);border-radius:3mm;overflow:hidden;background:#fff}
+  .dc .t{background:var(--g);color:#fff;padding:3.5mm 4.5mm;font-weight:800;font-size:11pt}
+  .dc.v .t{background:var(--o)}
+  .dc .b{padding:4mm 4.5mm;font-size:9.5pt}
+  .dc .b div{display:flex;justify-content:space-between;gap:3mm;border-bottom:1px solid #eef2e8;padding:2.6mm 0}
+  .dc .b div:last-child{border:0}
+  .dc .b span{color:var(--mu);white-space:nowrap}
+  .dc .b b{text-align:right}
+  .dc .b b{color:var(--gd)}
+  .leg{font-size:8.5pt;color:var(--mu);margin-top:4mm}
+  .leg i{display:inline-block;width:3mm;height:3mm;border-radius:1mm;background:var(--g);vertical-align:-.4mm;margin-right:1mm}
+  .leg i.o{background:var(--o);margin-left:5mm}
+  /* two col */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-top:8mm}
+  .box{border:1px solid var(--ln);border-radius:3mm;padding:5mm 6mm}
+  .box h3{font-size:11.5pt;color:var(--gd);margin-bottom:2mm}
+  .box ul{margin:0 0 0 4.5mm;font-size:9.5pt} .box li{margin-bottom:1.5mm} .box li::marker{color:var(--o)}
+  table{width:100%;border-collapse:collapse;font-size:9pt}
+  th{background:var(--gd);color:#fff;text-align:left;padding:2mm 3mm;font-size:8.5pt}
+  td{padding:3.2mm 3mm;border-bottom:1px solid var(--ln);vertical-align:top}
+  tr:nth-child(even) td{background:#f7faf2}
+  .ph{background:#fff6c9;border-bottom:1px dashed #c9a400;padding:0 1.2mm;font-weight:600;color:#6b5500;border-radius:1mm}
+  .fp{background:var(--gd);color:#fff;border-radius:3mm;padding:8mm 9mm;margin-top:10mm}
+  .fp .o{color:#ffb98a;font-size:8pt;letter-spacing:.16em;text-transform:uppercase}
+  .fp b{display:block;font-size:14pt;margin:1mm 0 .5mm}
+  .ct{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:10mm}
+  .ct div{border-left:1.2mm solid var(--o);padding-left:4mm;font-size:9.5pt}
+  .ct span{display:block;font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="pg cover">
+  <div class="l">
+    <div class="logo"><img src="assets/rasmi-logo.png" alt="Rasmi Logistic Service"></div>
+    <div class="k">Event Management Report</div>
+    <h1>HoA DRIVE Solar Fridge<br>Handover Ceremonies</h1>
+    <div class="tag">“Delivering Cold-Chain Livelihoods”</div>
+    <div class="by">Prepared by Rasmi Logistic Service<br>Waabari Mall, Mogadishu, Somalia</div>
+  </div>
+  <div class="r">
+    <img class="mk" src="assets/rasmi-mark.png" alt="">
+    <div class="s"><b>8</b><span>Districts delivered</span></div>
+    <div class="s"><b>480</b><span>Families received fridges</span></div>
+    <div class="s"><b>4</b><span>Regions covered</span></div>
+    <div class="meta"><em>Period</em> 18 Aug &ndash; 30 Sep 2026<br><em>Client</em> PIU, Ministry of Finance &middot; HoA DRIVE Project<br><em>Focal point</em> Abdulkadir Hussein Hassan</div>
+  </div>
+</section>
+
+<!-- 2 OVERVIEW -->
+<section class="pg">
+  <div class="side"><div class="logo"><img src="assets/rasmi-logo.png" alt=""></div>
+    <nav><div class="on"><i>1</i>Overview</div><div><i>2</i>What we delivered</div><div><i>3</i>District by district</div><div><i>4</i>Logistics &amp; lessons</div><div><i>5</i>Conclusion</div></nav>
+    <div class="foot">HoA DRIVE Handover Ceremonies<br>Event Management Report</div><img class="wm" src="assets/rasmi-mark.png" alt=""></div>
+  <div class="main"><div class="bar"></div>
+    <div class="kick">1 · Overview</div>
+    <h1>We won the project, and we delivered it.</h1>
+    <p class="sub">Rasmi Logistic Service handled the handover ceremonies for the HoA DRIVE Project, managed by the Project Implementation Unit (PIU), Ministry of Finance, with World Bank support. Between 18 August and 30 September 2026 we delivered in eight districts across four regions.</p>
+    <div class="big"><div><b>8</b><span>Districts delivered</span></div><div><b>480</b><span>Families received fridges</span></div><div><b>3 + 1</b><span>Member States + Banadir</span></div></div>
+    <div class="tl">
+      <div class="m"><div class="d">18 Aug 2026</div><div class="rg">Galmudug</div><div class="x">Dhusamareeb, Cadaado, Galkacyo<br>180 families</div></div>
+      <div class="m"><div class="d">6 Sep 2026</div><div class="rg">Banadir</div><div class="x">Mogadishu<br>60 families</div></div>
+      <div class="m"><div class="d">14 Sep 2026</div><div class="rg">Hirshabelle</div><div class="x">Jowhar, Beledweyne, Balcad<br>180 families</div></div>
+      <div class="m"><div class="d">30 Sep 2026</div><div class="rg">Jubaland</div><div class="x">Kismayo<br>60 families</div></div>
+    </div>
+    <div class="pn">2</div></div>
+</section>
+
+<!-- 3 SERVICES -->
+<section class="pg">
+  <div class="side"><div class="logo"><img src="assets/rasmi-logo.png" alt=""></div>
+    <nav><div><i>1</i>Overview</div><div class="on"><i>2</i>What we delivered</div><div><i>3</i>District by district</div><div><i>4</i>Logistics &amp; lessons</div><div><i>5</i>Conclusion</div></nav>
+    <div class="foot">HoA DRIVE Handover Ceremonies<br>Event Management Report</div><img class="wm" src="assets/rasmi-mark.png" alt=""></div>
+  <div class="main"><div class="bar"></div>
+    <div class="kick">2 · What we delivered</div>
+    <h1>Three services at every ceremony</h1>
+    <p class="sub">Solar fridges help women milk vendors keep milk fresh, reduce spoilage and sell with more confidence. Our job was to make each handover happen smoothly on the day.</p>
+    <div class="svc">
+      <div class="c"><div class="n">01</div><h3>Fridges for 60 families</h3><p>In each district, 60 families received their fridges. Our team helped them carry the fridges.</p><div class="st">480 families in total</div></div>
+      <div class="c"><div class="n">02</div><h3>Catering</h3><p>Refreshments at every ceremony, so participants and guests were hosted comfortably throughout.</p><div class="st">8 ceremonies</div></div>
+      <div class="c"><div class="n">03</div><h3>Transportation</h3><p>Vehicle rental or ground transport, matched to each district’s distance and access.</p><div class="st">6 vehicle rental · 2 ground transport</div></div>
+    </div>
+    <div class="pn">3</div></div>
+</section>
+
+<!-- 4 DISTRICTS -->
+<section class="pg">
+  <div class="side"><div class="logo"><img src="assets/rasmi-logo.png" alt=""></div>
+    <nav><div><i>1</i>Overview</div><div><i>2</i>What we delivered</div><div class="on"><i>3</i>District by district</div><div><i>4</i>Logistics &amp; lessons</div><div><i>5</i>Conclusion</div></nav>
+    <div class="foot">HoA DRIVE Handover Ceremonies<br>Event Management Report</div><img class="wm" src="assets/rasmi-mark.png" alt=""></div>
+  <div class="main"><div class="bar"></div>
+    <div class="kick">3 · District by district</div>
+    <h1>Eight districts, one service standard</h1>
+    <div class="grid">
+      <div class="dc"><div class="t">Dhusamareeb</div><div class="b"><div><span>Region</span><b>Galmudug</b></div><div><span>Date</span><b>18 Aug</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+      <div class="dc v"><div class="t">Cadaado</div><div class="b"><div><span>Region</span><b>Galmudug</b></div><div><span>Date</span><b>18 Aug</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Ground transport</b></div></div></div>
+      <div class="dc"><div class="t">Galkacyo</div><div class="b"><div><span>Region</span><b>Galmudug</b></div><div><span>Date</span><b>18 Aug</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+      <div class="dc"><div class="t">Mogadishu</div><div class="b"><div><span>Region</span><b>Banadir</b></div><div><span>Date</span><b>6 Sep</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+      <div class="dc"><div class="t">Jowhar</div><div class="b"><div><span>Region</span><b>Hirshabelle</b></div><div><span>Date</span><b>14 Sep</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+      <div class="dc"><div class="t">Beledweyne</div><div class="b"><div><span>Region</span><b>Hirshabelle</b></div><div><span>Date</span><b>14 Sep</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+      <div class="dc v"><div class="t">Balcad</div><div class="b"><div><span>Region</span><b>Hirshabelle</b></div><div><span>Date</span><b>14 Sep</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Ground transport</b></div></div></div>
+      <div class="dc"><div class="t">Kismayo</div><div class="b"><div><span>Region</span><b>Jubaland</b></div><div><span>Date</span><b>30 Sep</b></div><div><span>Families</span><b>60</b></div><div><span>Transport</span><b>Vehicle rental</b></div></div></div>
+    </div>
+    <div class="leg"><i></i>Vehicle rental <i class="o"></i>Ground transport &nbsp;&middot;&nbsp; Every district also received catering and our help carrying the fridges.</div>
+    <div class="pn">4</div></div>
+</section>
+
+<!-- 5 LOGISTICS + LESSONS -->
+<section class="pg">
+  <div class="side"><div class="logo"><img src="assets/rasmi-logo.png" alt=""></div>
+    <nav><div><i>1</i>Overview</div><div><i>2</i>What we delivered</div><div><i>3</i>District by district</div><div class="on"><i>4</i>Logistics &amp; lessons</div><div><i>5</i>Conclusion</div></nav>
+    <div class="foot">HoA DRIVE Handover Ceremonies<br>Event Management Report</div><img class="wm" src="assets/rasmi-mark.png" alt=""></div>
+  <div class="main"><div class="bar"></div>
+    <div class="kick">4 · Logistics &amp; lessons</div>
+    <h1>Planning each ceremony as its own deployment</h1>
+    <div class="two">
+      <div>
+        <table>
+          <tr><th style="width:38mm">Challenge</th><th>How we managed it</th></tr>
+          <tr><td><b>Distance</b></td><td>Chose vehicle rental or ground transport per district and scheduled travel to arrive in time.</td></tr>
+          <tr><td><b>Security &amp; access</b></td><td>Planned movements with the project team and local partners; kept travel within safe hours.</td></tr>
+          <tr><td><b>Carrying fridges</b></td><td>Helped each family carry their fridge so it reached them safely.</td></tr>
+          <tr><td><b>Consistency</b></td><td>Same service package and checklist in all 8 districts.</td></tr>
+        </table>
+        <p style="margin-top:3mm;font-size:9pt"><span class="ph">[Team to confirm: add the actual challenges faced in the field]</span></p>
+      </div>
+      <div>
+        <div class="box"><h3>What worked well</h3><ul><li>A standard service package for every district.</li><li>Planning each ceremony as its own deployment.</li><li>Helping families carry their fridges on the day.</li><li>Regular contact with the project focal point.</li></ul></div>
+        <div class="box" style="margin-top:4mm;border-color:var(--o)"><h3>For future handovers</h3><ul><li>Share a district schedule with the PIU early.</li><li>Confirm transport mode and venue per district in advance.</li><li>Agree handover arrangements with the focal point before the first ceremony.</li></ul></div>
+      </div>
+    </div>
+    <div class="pn">5</div></div>
+</section>
+
+<!-- 6 CONCLUSION -->
+<section class="pg">
+  <div class="side"><div class="logo"><img src="assets/rasmi-logo.png" alt=""></div>
+    <nav><div><i>1</i>Overview</div><div><i>2</i>What we delivered</div><div><i>3</i>District by district</div><div><i>4</i>Logistics &amp; lessons</div><div class="on"><i>5</i>Conclusion</div></nav>
+    <div class="foot">HoA DRIVE Handover Ceremonies<br>Event Management Report</div><img class="wm" src="assets/rasmi-mark.png" alt=""></div>
+  <div class="main"><div class="bar"></div>
+    <div class="kick">5 · Conclusion</div>
+    <h1>Eight districts. Four regions. 480 families.</h1>
+    <p class="sub">Each ceremony marked a practical step towards safer milk storage, less spoilage and stronger incomes for the families who depend on milk sales. Rasmi Logistic Service is proud to have supported the PIU and the HoA DRIVE Project.</p>
+    <div class="fp"><span class="o">Project focal point</span><b>Abdulkadir Hussein Hassan</b>HoA DRIVE Project, PIU, Ministry of Finance. Thank you for the trust and support throughout.</div>
+    <div class="ct">
+      <div><span>Address</span>Waabari Mall, Mogadishu, Somalia</div>
+      <div><span>Phone</span>+252-610330000</div>
+      <div><span>Email</span>Sales@rasmigroups.com</div>
+    </div>
+    <p style="margin-top:7mm;font-size:9pt;color:var(--mu)">Prepared by <b style="color:var(--ink)">Mohamed Jama Osman</b>, Sales Manager, Rasmi Logistic Service</p>
+    <div class="pn">6</div></div>
+</section>
+
+</body>
+</html>
