@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Event Management Report (Print) — HoA DRIVE Handover Ceremonies</title>
+<style>
+  /* Print edition: white page, no filled colour. Colour is used only for text and thin outlines. */
+  @page { size: A4; margin: 0; }
+  :root{--g:#55891a;--o:#fd6902;--ink:#1b2610;--mu:#555f4a;--ln:#bcc9ad}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff;font-family:"Inter","DejaVu Sans",Arial,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.55}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;padding:20mm 20mm 22mm;background:#fff}
+  .page:last-child{page-break-after:auto}
+  .hdr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:3mm;border-bottom:.5mm solid var(--g);margin-bottom:9mm}
+  .hdr img{height:9mm}
+  .hdr span{font-size:7.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);font-weight:600}
+  .ftr{position:absolute;left:20mm;right:20mm;bottom:10mm;display:flex;justify-content:space-between;font-size:7.5pt;color:var(--mu);border-top:.3mm solid var(--ln);padding-top:2mm}
+  .kicker{font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:1.5mm}
+  h1{font-size:20pt;line-height:1.15;color:var(--g);font-weight:800;letter-spacing:-.01em}
+  .rule{width:20mm;border-top:.9mm solid var(--o);margin:3.5mm 0 6mm}
+  h3{font-size:11.5pt;color:var(--g);margin:6mm 0 2mm;font-weight:700}
+  p{margin-bottom:3.2mm}
+  ul{margin:0 0 3mm 5mm} li{margin-bottom:1.6mm} li::marker{color:var(--o)}
+  .lead{font-size:12pt;font-weight:500;line-height:1.5;margin-bottom:5mm}
+  /* cover */
+  .cover{display:flex;flex-direction:column;padding:22mm 24mm 18mm}
+  .cover .logo{text-align:center}
+  .cover .logo img{height:34mm}
+  .cover .t{text-align:center;margin-top:20mm}
+  .cover .k{font-size:9pt;letter-spacing:.3em;text-transform:uppercase;color:var(--o);font-weight:700}
+  .cover h1{font-size:30pt;line-height:1.1;margin:5mm 0 4mm;color:var(--g)}
+  .cover .tag{font-size:13pt;color:var(--o);font-weight:600}
+  .cover .line{width:60mm;border-top:.6mm solid var(--g);margin:12mm auto}
+  .to{border:.5mm solid var(--g);border-radius:2mm;padding:7mm 9mm;text-align:center}
+  .to small{display:block;font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:2mm}
+  .to b{display:block;font-size:15pt;color:var(--ink)}
+  .to span{display:block;font-size:10pt;color:var(--mu);margin-top:1mm}
+  .cover .meta{margin-top:12mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm;font-size:9.5pt}
+  .cover .meta div{border-left:.7mm solid var(--o);padding-left:3.5mm}
+  .cover .meta small{display:block;font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+  .cover .from{margin-top:auto;text-align:center;font-size:9pt;color:var(--mu);border-top:.3mm solid var(--ln);padding-top:4mm}
+  .cover .from b{display:block;color:var(--ink);font-size:11pt}
+  /* components (outline only) */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:4mm 0 5mm}
+  .kpi{border:.5mm solid var(--g);border-radius:2mm;padding:4.5mm 5mm}
+  .kpi:nth-child(2){border-color:var(--o)}
+  .kpi b{display:block;font-size:22pt;line-height:1.1;color:var(--g);font-weight:800}
+  .kpi:nth-child(2) b{color:var(--o)}
+  .kpi span{font-size:8pt;color:var(--mu);text-transform:uppercase;letter-spacing:.1em}
+  table{width:100%;border-collapse:collapse;font-size:9pt;margin:2mm 0 4mm}
+  th{text-align:left;padding:2.2mm 2.5mm;font-size:8.5pt;color:var(--g);border-bottom:.6mm solid var(--g);font-weight:700}
+  td{padding:2.2mm 2.5mm;border-bottom:.3mm solid var(--ln);vertical-align:top}
+  td.c,th.c{text-align:center}
+  tr.tot td{font-weight:800;border-top:.5mm solid var(--g);border-bottom:.5mm solid var(--g)}
+  .dt td,.dt th{white-space:nowrap;padding-left:2mm;padding-right:2mm}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:4.5mm;margin:3mm 0 4mm}
+  .card{border:.4mm solid var(--g);border-radius:2mm;padding:4.5mm 5mm}
+  .card.or{border-color:var(--o)}
+  .card .n{font-size:8pt;font-weight:800;letter-spacing:.14em;color:var(--o);text-transform:uppercase;margin-bottom:1mm}
+  .card h4{font-size:11pt;margin-bottom:1.5mm;color:var(--ink)}
+  .card p{font-size:9.5pt;margin:0;color:#333d2a}
+  .card ul{font-size:9.5pt;margin:1mm 0 0 4.5mm}
+  .steps{margin:3mm 0}
+  .step{display:flex;gap:4mm;margin-bottom:2.4mm;align-items:flex-start}
+  .step i{font-style:normal;flex:0 0 7.5mm;height:7.5mm;border:.5mm solid var(--o);border-radius:50%;color:var(--o);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:9pt}
+  .step b{display:block;color:var(--g)}
+  .step span{font-size:9.7pt}
+  .region{border:.4mm solid var(--g);border-radius:2mm;margin-bottom:3.5mm}
+  .region .rh{border-bottom:.3mm solid var(--ln);padding:2.4mm 4.5mm;display:flex;justify-content:space-between;font-weight:700;color:var(--g)}
+  .region .rh span{font-weight:500;font-size:9pt;color:var(--mu)}
+  .region .rb{padding:3mm 4.5mm;font-size:9.5pt;display:grid;grid-template-columns:28mm 1fr;gap:1.2mm 4mm}
+  .region .rb em{font-style:normal;color:var(--mu);font-size:8pt;text-transform:uppercase;letter-spacing:.1em;padding-top:.6mm}
+  .contact{border:.5mm solid var(--g);border-radius:2mm;padding:6mm 8mm;margin-top:7mm}
+  .contact div{font-size:10pt;margin-bottom:1.3mm}
+  .contact .o{color:var(--o);display:inline-block;width:24mm;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+  .sign{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9mm;margin-top:14mm}
+  .sign .b{height:22mm;border-bottom:.4mm solid var(--ink)}
+  .sign .st{height:22mm;border:.4mm dashed var(--mu);border-radius:50%;width:22mm;margin:0 auto 0 0}
+  .sign p{font-size:8.5pt;margin:1.5mm 0 0;color:var(--mu)}
+  .sign p b{display:block;color:var(--ink);font-size:9.5pt}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="page cover">
+  <div class="logo"><img src="assets/rasmi-logo.png" alt="Rasmi Logistic Service"></div>
+  <div class="t">
+    <div class="k">Event Management Report</div>
+    <h1>HoA DRIVE Solar Fridge<br>Handover Ceremonies</h1>
+    <div class="tag">“Delivering Cold-Chain Livelihoods”</div>
+  </div>
+  <div class="line"></div>
+  <div class="to">
+    <small>Submitted to</small>
+    <b>Abdulkadir Hussein Hassan</b>
+    <span>Focal Point, HoA DRIVE Project</span>
+    <span>Project Implementation Unit (PIU), Ministry of Finance, Federal Government of Somalia</span>
+  </div>
+  <div class="meta">
+    <div><small>Submission date</small>14 October 2026</div>
+    <div><small>Event period</small>18 Aug &ndash; 30 Sep 2026</div>
+    <div><small>Scope</small>8 districts, 4 regions</div>
+  </div>
+  <div class="from">Submitted by<b>Rasmi Logistic Service</b>Waabari Mall, Mogadishu, Somalia &middot; +252-610330000 &middot; Sales@rasmigroups.com</div>
+</section>
+
+<!-- 2 EXEC SUMMARY -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="kicker">Section 1</div>
+  <h1>Executive Summary</h1><div class="rule"></div>
+  <p class="lead">Rasmi Logistic Service won the contract for the handover ceremonies of the HoA DRIVE Project and delivered them in eight districts between 18 August and 30 September 2026.</p>
+  <p>The ceremonies formed part of the HoA DRIVE Project, managed by the Project Implementation Unit (PIU) of the Federal Government of Somalia’s Ministry of Finance, with support from the World Bank. This report is submitted to the project focal point, Abdulkadir Hussein Hassan.</p>
+  <div class="kpis">
+    <div class="kpi"><b>8</b><span>Districts delivered</span></div>
+    <div class="kpi"><b>480</b><span>Families received fridges</span></div>
+    <div class="kpi"><b>3 + 1</b><span>Member States + Banadir</span></div>
+  </div>
+  <h3>What we delivered</h3>
+  <ul>
+    <li><b>Media coverage</b> of the handover ceremony in each of the eight districts.</li>
+    <li><b>Fridges for 60 families</b> in each district, and our team helped the families carry them.</li>
+    <li><b>Catering</b> at each ceremony.</li>
+    <li><b>Transportation</b> to and from each district, by vehicle rental or ground transport.</li>
+  </ul>
+  <h3>Reach at a glance</h3>
+  <table>
+    <tr><th>Region</th><th>Districts</th><th>Date</th><th class="c">Families</th></tr>
+    <tr><td>Galmudug</td><td>Dhusamareeb, Cadaado, Galkacyo</td><td>18 Aug 2026</td><td class="c">180</td></tr>
+    <tr><td>Banadir</td><td>Mogadishu</td><td>6 Sep 2026</td><td class="c">60</td></tr>
+    <tr><td>Hirshabelle</td><td>Jowhar, Beledweyne, Balcad</td><td>14 Sep 2026</td><td class="c">180</td></tr>
+    <tr><td>Jubaland</td><td>Kismayo</td><td>30 Sep 2026</td><td class="c">60</td></tr>
+    <tr class="tot"><td>Total</td><td>8 districts</td><td></td><td class="c">480</td></tr>
+  </table>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>2</span></div>
+</section>
+
+<!-- 3 SCOPE -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="kicker">Section 2</div>
+  <h1>Background &amp; Scope of Services</h1><div class="rule"></div>
+  <p>The HoA DRIVE Project supports livelihoods in Somalia. Solar-powered fridges give women milk vendors a way to keep milk fresh, reduce spoilage and sell with more confidence. Public handover ceremonies recognise the beneficiaries and create a visible record of the support provided.</p>
+  <p>We won this project, and we delivered four services at every ceremony.</p>
+  <div class="grid2">
+    <div class="card"><div class="n">Service 1</div><h4>Media coverage</h4><p>Coverage of the ceremony in each district, capturing the handover and the families receiving their fridges for the project record.</p></div>
+    <div class="card or"><div class="n">Service 2</div><h4>Fridges for 60 families</h4><p>In each district, 60 families received their fridges, and our team helped them carry the fridges.</p></div>
+    <div class="card or"><div class="n">Service 3</div><h4>Catering</h4><p>Refreshments at each ceremony, so participants and guests were hosted comfortably.</p></div>
+    <div class="card"><div class="n">Service 4</div><h4>Transportation</h4><p>Vehicle rental or ground transport, matched to each district’s distance and access.</p></div>
+  </div>
+  <h3>How a district ceremony ran</h3>
+  <div class="steps">
+    <div class="step"><i>1</i><div><b>Prepare</b><span>Confirm the district plan, transport option, media team and catering.</span></div></div>
+    <div class="step"><i>2</i><div><b>Mobilise</b><span>Move the team and materials to the district and set up the venue.</span></div></div>
+    <div class="step"><i>3</i><div><b>Hand over the fridges</b><span>Hand the fridges to the 60 families in that district.</span></div></div>
+    <div class="step"><i>4</i><div><b>Help carry and cover</b><span>Help each family carry their fridge, while the media team covers the ceremony.</span></div></div>
+    <div class="step"><i>5</i><div><b>Close</b><span>Wrap up on site, secure the media files and confirm the outcome.</span></div></div>
+  </div>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>3</span></div>
+</section>
+
+<!-- 4 DELIVERY -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="kicker">Section 3</div>
+  <h1>Delivery by District</h1><div class="rule"></div>
+  <p>Eight districts received the full service package between 18 August and 30 September 2026.</p>
+  <table class="dt">
+    <tr><th>#</th><th>District</th><th>Region</th><th>Date</th><th class="c">Families</th><th class="c">Media</th><th class="c">Catering</th><th>Transport</th></tr>
+    <tr><td>1</td><td>Dhusamareeb</td><td>Galmudug</td><td>18 Aug</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr><td>2</td><td>Cadaado</td><td>Galmudug</td><td>18 Aug</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Ground transport</td></tr>
+    <tr><td>3</td><td>Galkacyo</td><td>Galmudug</td><td>18 Aug</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr><td>4</td><td>Mogadishu</td><td>Banadir</td><td>6 Sep</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr><td>5</td><td>Jowhar</td><td>Hirshabelle</td><td>14 Sep</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr><td>6</td><td>Beledweyne</td><td>Hirshabelle</td><td>14 Sep</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr><td>7</td><td>Balcad</td><td>Hirshabelle</td><td>14 Sep</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Ground transport</td></tr>
+    <tr><td>8</td><td>Kismayo</td><td>Jubaland</td><td>30 Sep</td><td class="c">60</td><td class="c">&#10003;</td><td class="c">&#10003;</td><td>Vehicle rental</td></tr>
+    <tr class="tot"><td colspan="4">Total</td><td class="c">480</td><td></td><td></td><td></td></tr>
+  </table>
+  <h3>Regional summary</h3>
+  <div class="region"><div class="rh">Galmudug <span>3 districts · 180 families · 18 August 2026</span></div><div class="rb"><em>Districts</em><div>Dhusamareeb, Cadaado, Galkacyo</div><em>Delivered</em><div>Fridges for 60 families per district with help carrying them, media coverage and catering. Vehicle rental in Dhusamareeb and Galkacyo, ground transport in Cadaado.</div></div></div>
+  <div class="region"><div class="rh">Banadir <span>1 district · 60 families · 6 September 2026</span></div><div class="rb"><em>Districts</em><div>Mogadishu</div><em>Delivered</em><div>Fridges for 60 families with help carrying them, media coverage and catering. Vehicle rental.</div></div></div>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>4</span></div>
+</section>
+
+<!-- 5 REGIONS + LOGISTICS -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="region"><div class="rh">Hirshabelle <span>3 districts · 180 families · 14 September 2026</span></div><div class="rb"><em>Districts</em><div>Jowhar, Beledweyne, Balcad</div><em>Delivered</em><div>Fridges for 60 families per district with help carrying them, media coverage and catering. Vehicle rental in Jowhar and Beledweyne, ground transport in Balcad.</div></div></div>
+  <div class="region"><div class="rh">Jubaland <span>1 district · 60 families · 30 September 2026</span></div><div class="rb"><em>Districts</em><div>Kismayo</div><em>Delivered</em><div>Fridges for 60 families with help carrying them, media coverage and catering. Vehicle rental.</div></div></div>
+
+  <div class="kicker" style="margin-top:9mm">Section 4</div>
+  <h1>Logistics &amp; Coordination</h1><div class="rule"></div>
+  <p>Eight ceremonies in four regions meant eight separate field operations. We planned each district as its own deployment, with the same standards of service in all of them.</p>
+  <div class="grid2">
+    <div class="card"><h4>Vehicle rental</h4><p>Used in six districts: Jowhar, Beledweyne, Kismayo, Dhusamareeb, Galkacyo and Mogadishu.</p></div>
+    <div class="card or"><h4>Ground transport</h4><p>Used in two districts: Balcad and Cadaado, where a transport arrangement for the day suited the location.</p></div>
+  </div>
+  <h3>Coordination approach</h3>
+  <ul>
+    <li>One plan per district covering transport, catering, fridge handover and media coverage.</li>
+    <li>Support to families sized to the 60 fridges handed over in each district.</li>
+    <li>Regular contact with the project focal point, Abdulkadir Hussein Hassan, so that each ceremony matched the project’s expectations.</li>
+  </ul>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>5</span></div>
+</section>
+
+<!-- 6 CHALLENGES + LESSONS -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="kicker">Section 5</div>
+  <h1>Challenges &amp; How We Managed Them</h1><div class="rule"></div>
+  <table>
+    <tr><th style="width:42mm">Challenge</th><th>How we managed it</th></tr>
+    <tr><td><b>Distance between districts</b></td><td>Chose vehicle rental or ground transport per district, and scheduled travel so that teams arrived in time to set up.</td></tr>
+    <tr><td><b>Security and access</b></td><td>Planned movements with the project team and local partners, and kept travel and set-up within safe working hours.</td></tr>
+    <tr><td><b>Carrying fridges</b></td><td>Helped each family carry their fridge, so the equipment reached them safely.</td></tr>
+    <tr><td><b>Consistent quality across 8 sites</b></td><td>Used the same service package and checklist in every district.</td></tr>
+  </table>
+  <div class="kicker" style="margin-top:9mm">Section 6</div>
+  <h1>Lessons Learned &amp; Recommendations</h1><div class="rule"></div>
+  <div class="grid2">
+    <div class="card"><h4>What worked well</h4><ul><li>A standard service package for every district.</li><li>Planning each ceremony as its own deployment.</li><li>Helping families carry their fridges on the day.</li></ul></div>
+    <div class="card or"><h4>For future handovers</h4><ul><li>Share a district schedule with the PIU early.</li><li>Confirm transport mode and venue per district in advance.</li><li>Agree handover arrangements with the focal point before the first ceremony.</li></ul></div>
+  </div>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>6</span></div>
+</section>
+
+<!-- 7 SIGN-OFF -->
+<section class="page">
+  <div class="hdr"><img src="assets/rasmi-logo.png" alt=""><span>Event Management Report</span></div>
+  <div class="kicker">Section 7</div>
+  <h1>Conclusion</h1><div class="rule"></div>
+  <p>Eight districts, four regions, and 480 families received their fridges. Each ceremony marked a practical step towards safer milk storage, less spoilage and stronger incomes for the families who depend on milk sales.</p>
+  <p>Rasmi Logistic Service thanks the Project Implementation Unit, Ministry of Finance, and in particular the project focal point, Abdulkadir Hussein Hassan, for the trust and support throughout.</p>
+  <div class="kicker" style="margin-top:9mm">Submission</div>
+  <h1>Submission &amp; Sign-off</h1><div class="rule"></div>
+  <p>This Event Management Report for the HoA DRIVE Solar Fridge Handover Ceremonies is submitted by Rasmi Logistic Service to the project focal point on <b>14 October 2026</b>.</p>
+  <div class="contact">
+    <div><span class="o">Company</span> Rasmi Logistic Service</div>
+    <div><span class="o">Address</span> Waabari Mall, Mogadishu, Somalia</div>
+    <div><span class="o">Phone</span> +252-610330000</div>
+    <div><span class="o">Email</span> Sales@rasmigroups.com</div>
+  </div>
+  <div class="sign">
+    <div><div class="b"></div><p><b>Mohamed Jama Osman</b>Sales Manager, Rasmi Logistic Service<br>Signature</p></div>
+    <div><div class="st"></div><p><b>Company stamp</b>Rasmi Logistic Service</p></div>
+    <div><div class="b"></div><p><b>Received by</b>Abdulkadir Hussein Hassan<br>Focal Point, HoA DRIVE Project<br>Date: ____ / ____ / 2026</p></div>
+  </div>
+  <div class="ftr"><span>Rasmi Logistic Service · HoA DRIVE Handover Ceremonies</span><span>7</span></div>
+</section>
+
+</body>
+</html>
